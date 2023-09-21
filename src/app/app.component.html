@@ -15,8 +15,14 @@
             <button class="btn btn-primary" [disabled]="username === '' " (click)="username = ''">Reset User
             </button>
             <hr>
-            <button class="btn btn-primary" (click)="showSecret = !showSecret">Display details</button>
+            <!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display details</button> -->
+            <button class="btn btn-primary" (click)="onToggleDetail()">Display details</button>
+
             <p *ngIf="showSecret">Secret Password = tuna</p>
+            <div *ngFor="let logItem of log; let i = index"
+                [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': i >= 4}">{{
+                logItem }}</div>
+
         </div>
     </div>
 </div>

@@ -9,4 +9,11 @@ export class AppComponent {
   title = 'angular-app';
   username = '';
   showSecret = false;
+  log = [];
+
+
+  onToggleDetail() {
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1)
+  }
 }
